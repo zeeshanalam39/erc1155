@@ -84,10 +84,11 @@ contract Traveler is
         purchasesPerWallet[msg.sender] += amount;
     }
 
-    function withdraw(address _addr) external onlyOwner {
-        uint256 balance = address(this).balance;
-        payable(_addr).transfer(balance);
-    }
+    // This method is not required if Payment Splitter has been integrated.
+    // function withdraw(address _addr) external onlyOwner {
+    //     uint256 balance = address(this).balance;
+    //     payable(_addr).transfer(balance);
+    // }
 
     function editMintWindows(
         bool _publicMintOpen,
